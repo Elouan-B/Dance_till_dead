@@ -7,6 +7,7 @@
 
 SRC	=	running.c\
 		main.c\
+		draw_grid.c\
 
 OBJ	=	$(SRC:.c)
 

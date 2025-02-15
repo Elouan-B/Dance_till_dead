@@ -9,5 +9,5 @@
 
 int main(void)
 {
-    return running();
+    return innit();
 }
