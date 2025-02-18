@@ -28,5 +28,6 @@ void move_down(map_t map);
 void move_up(map_t map);
 int running(map_t map, tileset_t *tileset, sfSprite *player, game_state_t *gs);
 char **generate_map(void);
+char **generate_entity_map(void);
 #endif /* ifndef GUH_H
  */

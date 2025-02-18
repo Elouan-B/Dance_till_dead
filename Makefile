@@ -10,6 +10,7 @@ SRC	=	running.c\
 		draw_grid.c\
 		movement.c\
 		innit.c\
+		monster.c\
 
 OBJ	=	$(SRC:.c)
 

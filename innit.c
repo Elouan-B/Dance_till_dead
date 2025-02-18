@@ -9,7 +9,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <SFML/System/Clock.h>
-#include <time.h>
 #include <stdlib.h>
 #include "include/settings.h"
 #include "include/structures.h"
@@ -17,7 +16,7 @@
 static map_t innit_map(void)
 {
     char **tiles_map = generate_map();
-    char **entity_map = NULL;
+    char **entity_map = generate_entity_map();
 
     map_t map = {tiles_map, entity_map};
     return map;

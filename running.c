@@ -67,6 +67,7 @@ char **generate_map(void)
             map_array[i][y] = rand_char();
         }
     }
+    map_array[3][3] = '.';
     return (map_array);
 }
 
