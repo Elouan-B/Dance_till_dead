@@ -7,6 +7,7 @@
 
 #include "include/structures.h"
 #include "include/settings.h"
+#include <SFML/Graphics/Sprite.h>
 #include <SFML/Graphics/Types.h>
 #include <SFML/System/Vector2.h>
 
@@ -16,12 +17,19 @@ static void draw_tiles(sfRenderWindow **window, tileset_t *tileset, map_t map, s
     int i = p.x;
     int y = p.y;
 
+    if (map.tilemap[i][y] == '.') {
+        sfSprite_setPosition(tileset->tile1, (sfVector2f) {TILE_SIZE * i + OFFSET, TILE_SIZE * y + 46});
+        sfRenderWindow_drawSprite(*window, tileset->tile1, 0);
+    }
     if (map.tilemap[i][y] == 'o') {
-            sfSprite_setPosition(tileset->tile1, (sfVector2f) {TILE_SIZE * i + OFFSET, TILE_SIZE * y + 46});
-            sfRenderWindow_drawSprite(*window, tileset->tile1, 0);
-    } else {
-            sfSprite_setPosition(tileset->tile2, (sfVector2f) {TILE_SIZE * i + OFFSET, TILE_SIZE * y + 46});
-            sfRenderWindow_drawSprite(*window, tileset->tile2, 0);
+        sfSprite_setPosition(tileset->tile2, (sfVector2f) {TILE_SIZE * i + OFFSET, TILE_SIZE * y + 46});
+        sfRenderWindow_drawSprite(*window, tileset->tile2, 0);
+    }
+    if (map.tilemap[i][y] == 'l') {
+        sfSprite_setPosition(tileset->tile2, (sfVector2f) {TILE_SIZE * i + OFFSET, TILE_SIZE * y + 46});
+        sfSprite_setColor(tileset->tile2, sfRed);
+        sfRenderWindow_drawSprite(*window, tileset->tile2, 0);
+        sfSprite_setColor(tileset->tile2, sfWhite);
     }
 }
 

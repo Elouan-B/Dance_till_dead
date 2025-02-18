@@ -8,6 +8,8 @@
 SRC	=	running.c\
 		main.c\
 		draw_grid.c\
+		movement.c\
+		innit.c\
 
 OBJ	=	$(SRC:.c)
 
